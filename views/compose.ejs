@@ -1,0 +1,14 @@
+<%- include('partials/header'); -%>
+
+    <div class="container main-content mt-5">
+         <form action="/" method="POST">
+            <label for="exampleInputEmail1" class="form-label fw-bold">Title</label>
+            <input type="text" class="form-control title-input" name="titleText" autoComplete="off" placeholder="Choose a suitable title for your post" style="height: 50px">
+            <label for="exampleInputEmail1" class="form-label fw-bold">Compose</label>
+            <textarea class="form-control" name="plainText" cols="30" placeholder="Feel free create a post"
+                style="height: 120px"></textarea>
+            <button class="btn btn-lg btn-publish">Publish</button>
+         </form>
+    </div>
+
+<%- include('partials/footer'); -%>

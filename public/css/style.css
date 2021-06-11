@@ -1,0 +1,250 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{ 
+	scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins';
+  background-color: #E7E7E7;
+}
+
+/*Navbar section*/
+
+.nav {
+  margin-top: 2rem;
+}
+
+.nav-head {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav-head span{
+	color: #FB8585;
+}
+
+.nav-items {
+  justify-content: flex-end;
+}
+
+.navbar-nav  li a:hover {
+    color: #FB8585 !important;
+}
+
+/*Main content*/
+.main-content {
+	background-color: white;
+	border-radius: 20px;
+	padding: 2rem;
+}
+
+.main-content h1 {
+	line-height: 1.5;
+}
+
+.main-content p {
+	font-size: 1rem;
+	margin-top: 16px;
+}
+
+.hero-svg {
+	width: 40%;
+}
+
+.row h1 {
+	margin-left: 60px;
+}
+
+
+																													/*Home page*/
+
+																										
+.home h1 {
+	margin: 0 20px;
+}																													
+.btn-compose {
+	color: white;
+	padding: .8rem 1.2rem;
+	text-decoration: none;
+	background-color: #FB8585;
+	cursor: pointer;
+	border-radius: 5px;
+	font-weight: normal;
+	line-height: 0;
+	font-size: 1rem;
+}
+
+.btn-compose:hover {
+	color: white;
+}
+
+.post-head {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.post-head:hover{
+	color: #FB8585;
+}
+
+ .homepage-post {
+	 margin: 5rem 0;
+	 background-color: white;
+	 border-radius: 20px;
+	 padding: 1rem 2rem;
+ }
+
+ .read-link {
+	 color: #FB8585;
+ }
+
+.read-link:hover {
+	color: #fd3636;
+}
+
+			/* Post Page */
+ 
+.post-page {
+	background-color: white;
+	text-align:start;
+	padding: 2rem 5rem;
+	border-radius: 20px;
+	margin-bottom: 10rem;
+}
+
+.post-page h1 {
+	text-align: center;
+}
+																													/*Compose page*/
+
+.mail-box {
+	margin-top: 5rem;
+	border-radius: 15px;
+	padding: 5rem 25rem;
+	background-color: white;
+}
+
+.text-input {
+	padding-bottom: 8rem;
+}
+
+.title-input {
+	margin-bottom: 2rem;
+}
+
+.btn-publish {
+	color: white;
+	margin-top: 2rem;
+	background-color: #FB8585;
+}
+
+.btn-publish:hover {
+	color: white;
+}
+
+								/* About page */
+
+.about {
+	text-align: center;
+	padding: 2rem 5rem;
+}
+
+/* Contact page */
+
+.contact {
+	text-align: center;
+	margin-top: 48px;
+}
+
+.contact h1 {
+	margin-bottom: 2rem;
+}
+
+.contact img {
+	width: 20%;
+	cursor: pointer;
+}
+
+.contact img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.contact input {
+	display: block;
+	align-items: center;
+}
+
+
+/*Footer section*/
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FB8585;
+  color: white;
+  text-align: center;
+}
+
+/* Media Queries */
+
+/* Normal phones */
+
+@media (max-width: 990px) {
+  .home img {
+	  display: none;
+  }
+
+  .about {
+	  margin-bottom: 10rem;
+	  padding: 2rem;
+  }
+
+  .post-page {
+	  margin-bottom: 10rem;
+	  line-height: 2;
+	  padding: 2rem;
+  }
+  
+}
+
+/* Iphone */
+
+@media (max-width: 375px){
+	body h1{
+		font-size: 1.5rem;
+	}
+	body p{
+		font-size: 1rem;
+	}
+
+	.home {
+			padding: 2rem .5rem .5rem;
+	}
+
+	.post-container h1 {
+		margin-top: 2rem;
+	}
+}
