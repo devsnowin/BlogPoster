@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
 const lib = require('thoughts');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -17,10 +18,31 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'));
 
+//Connecting mongoDB 
+
+mongoose.connect("mongodb://localhost:27017/blogposterDB", {useNewUrlParser: true, useUnifiedTopology: true});
+
+//creating new schema
+
+const postsSchema = new mongoose.Schema({
+    title: String,
+    body: String
+});
+
+//creating a model 
+
+const Post = mongoose.model("Post", postsSchema);
+
 
 //Home Page
 app.get("/", (req, res) => {
-    res.render('home', { thought: thought, posts: posts });
+
+    Post.find({}, (err, foundedPost) => {
+        
+            res.render('home', { thought: thought, posts: foundedPost });
+
+    });
+    
 });
 
 //About Page
@@ -46,12 +68,12 @@ app.post("/", (req, res) => {
 
     if (title.length != 0 && body.length != 0) {
 
-        const post = {
-            Title: title,
-            Body: body
-        };
+        const post = new Post({
+            title: title,
+            body: body
+        });
 
-        posts.push(post);
+        post.save();
         res.redirect("/");
 
     }
@@ -63,13 +85,23 @@ app.post("/", (req, res) => {
 
 app.get("/posts/:head", (req, res) => {
     const postName = req.params.head;
-    posts.forEach((post) => {
-        if (_.lowerCase(postName) === _.lowerCase(post.Title)) {
-            res.render('post', {
-                title: post.Title,
-                body: post.Body
+
+    Post.find({}, (err, foundedPost) => {
+
+        if (!err) {
+            foundedPost.forEach((post) => {
+                if (_.lowerCase(postName) === _.lowerCase(post.title)) {
+                    res.render('post', {
+                        title: post.title,
+                        body: post.body
+                    });
+                }
             });
         }
+        else {
+            console.log("Error in finding post page.");
+        }
+        
     });
 });
 

@@ -20,11 +20,11 @@
     <% posts.forEach((post)=>{ %>
         <div class="container post-container mt-3">
             <div class="container-fluid homepage-post">
-                <h1> <a class="post-head" href="/posts/<%= post.Title %>">
-                        <%= post.Title %>
+                <h1> <a class="post-head" href="/posts/<%= post.title %>">
+                        <%= post.title %>
                     </a> </h1>
                 <p>
-                    <%= post.Body.substring(0,200) + " . . . . . ." %> <a href="/posts/<%= post.Title %>"
+                    <%= post.body.substring(0,200) + " . . . . . ." %> <a href="/posts/<%= post.title %>"
                             class="read-link">Read more</a>
                 </p>
             </div>
