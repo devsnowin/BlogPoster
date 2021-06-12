@@ -8,7 +8,7 @@ const app = express();
 const port = 3000;
 
 //Variables
-let randomThoughts = "Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. Discover the thoughts of various people like you!";
+let thought = "Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. Discover the thoughts of various people like you!";
 
 const posts = [];
 
@@ -20,7 +20,7 @@ app.use(express.static('public'));
 
 //Home Page
 app.get("/", (req, res) => {
-    res.render('home', { thought: randomThoughts, posts: posts });
+    res.render('home', { thought: thought, posts: posts });
 });
 
 //About Page
