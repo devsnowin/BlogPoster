@@ -7,7 +7,7 @@ The main purpose of this blog is to share your thoughts with all so that all can
 You can post news, events, story, article, etc...
 Once again don't spam anything, because it is an open world platform.
 Other's able to see through your posts.<br><br>
-<a href="https://mashtech-blogposter.herokuapp.com/">BlogPoster</a>
+<a href="https://mashtech-blogposter.herokuapp.com/" target="_blank">BlogPoster</a>
 </p>
 
 #
